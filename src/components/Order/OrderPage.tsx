@@ -1,25 +1,59 @@
-import {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {AppContext} from '../context/AppContext';
 import './order.css';
 import OrderForm from "./OrderForm";
 import useSearch from "./useSearch";
 import {Link} from "react-router-dom";
 import {addCartSvg, removeCartSvg} from "../../assets/svg";
-import cheeseBread from '../../assets/images/cheeseBread.JPG';
-import salad from '../../assets/images/salad.JPG';
-import pasta from '../../assets/images/pasta.JPG';
-import fish from '../../assets/images/fish.JPG';
-import oysters from '../../assets/images/oysters.JPG';
-import potatoes from '../../assets/images/potatoes.JPG';
+import cheeseBread from '../../assets/images/cheeseBread.jpg';
+import salad from '../../assets/images/salad.jpg';
+import pasta from '../../assets/images/pasta.jpg';
+import fish from '../../assets/images/fish.jpg';
+import oysters from '../../assets/images/oysters.jpg';
+import potatoes from '../../assets/images/potatoes.jpg';
+import {MenuItem} from "../context/initialState.ts";
+
 
 export default function OrderPage() {
-  const { cart, dispatch } = useContext(AppContext);
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error("AppContext must be used within a provider");
+  }
+
+  const { cart, dispatch } = context;
+
   const [search, setSearch] = useState('');
   const { handleSearch } = useSearch({ search });
   const [submitted, setSubmitted] = useState(false);
 
-  // Map image names to imported images
-  const imageMap = {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  function handleAddToCart(item: MenuItem) {
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: item,
+    });
+  }
+
+
+
+  function handleRemoveFromCart(itemId: number) {
+    dispatch({
+      type: 'REMOVE_FROM_CART',
+      payload: itemId,
+    });
+  }
+
+// тип для события submit
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
+  const imageMap: { [key: string]: string } = {
     'cheeseBread.JPG': cheeseBread,
     'salad.JPG': salad,
     'pasta.JPG': pasta,
@@ -28,94 +62,64 @@ export default function OrderPage() {
     'potatoes.JPG': potatoes,
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  function handleAddToCart(item) {
-    dispatch({
-      type: 'ADD_TO_CART',
-      payload: item,
-    })
-  };
-
-  function handleRemoveFromCart(item) {
-    dispatch({
-      type: 'REMOVE_FROM_CART',
-      payload: item,
-    })
-  };
-
-  function onSubmit(e) {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
-  let total = cart.map(item => item.price * item.quantity)
-  .reduce((acc, value) => acc + value, 0).toFixed(2);
+  // Правильно вычисленный total с приведением цены к числу
+  const total = cart
+      .reduce((acc, item) => acc + parseFloat(item.price) * item.quantity, 0)
+      .toFixed(2);
 
   return (
-    <>
-      <div className="order">
-        <h2>ORDER ONLINE</h2>
-        {
-          submitted ?
-          <div className="submitted">
-            <p>Order has been placed!</p>
-            <Link to="/" rel="href" aria-label="Go back to Home page">Go Back</Link>
-          </div>
-          :
-          <div className="order-content">
-            <div className="search">
-              <input
-                placeholder="Search menu...e.g pasta"
-                value={search}
-                onChange={e => setSearch(e.target.value)}/>
-            </div>
-            <div className="order-items">
-              {
-                handleSearch().map(item => {
-                  return (
-                    <div className="order-item" key={item.id}>
-                      <img src={imageMap[item.img]} alt={item.dishUpper} />
-                      <p>{item.dishLower}</p>
-                      <p>
-                        <span>${item.price}</span>
-                        <button aria-label="Remove from cart" onClick={() => handleRemoveFromCart(item.id)}>{removeCartSvg}</button>
-                        <button aria-label="Add to cart" onClick={() => handleAddToCart(item)}>{addCartSvg}</button>
-                      </p>
-                    </div>
-                  )
-                })
-              }
-            </div>
-            <div className="cart-items">
-              {
-                cart.length === 0 ?
-                <p className="cart-empty">Cart is empty!</p>
-                :
-                <>
-                  {
-                    cart.map(item => {
-                      return (
-                        <div className="cart-item" key={item.id}>
-                          <p>
-                            <span>- {item.dishLower}</span>
-                            <span><b>x{item.quantity}</b></span>
-                          </p>
-                        </div>
-                      )
-                    })
-                  }
-                  <p className="total">Total: ${total}</p>
-                </>
-              }
-            </div>
-            <OrderForm onSubmit={onSubmit} />
-          </div>
-        }
-      </div>
-      <small className="rights">© All rights reserved to Little Lemon</small>
-    </>
-  )
-};
+      <>
+        <div className="order">
+          <h2>ORDER ONLINE</h2>
+          {submitted ? (
+              <div className="submitted">
+                <p>Order has been placed!</p>
+                <Link to="/" rel="href" aria-label="Go back to Home page">Go Back</Link>
+              </div>
+          ) : (
+              <div className="order-content">
+                <div className="search">
+                  <input
+                      placeholder="Search menu...e.g pasta"
+                      value={search}
+                      onChange={e => setSearch(e.target.value)}
+                  />
+                </div>
+                <div className="order-items">
+                  {handleSearch().map(item => (
+                      <div className="order-item" key={item.id}>
+                        <img src={imageMap[item.img]} alt={item.dishUpper} />
+                        <p>{item.dishLower}</p>
+                        <p>
+                          <span>${item.price}</span>
+                          <button aria-label="Remove from cart" onClick={() => handleRemoveFromCart(item.id)}>{removeCartSvg}</button>
+                          <button aria-label="Add to cart" onClick={() => handleAddToCart(item)}>{addCartSvg}</button>
+                        </p>
+                      </div>
+                  ))}
+                </div>
+                <div className="cart-items">
+                  {cart.length === 0 ? (
+                      <p className="cart-empty">Cart is empty!</p>
+                  ) : (
+                      <>
+                        {cart.map(item => (
+                            <div className="cart-item" key={item.id}>
+                              <p>
+                                <span>- {item.dishLower}</span>
+                                <span><b>x{item.quantity}</b></span>
+                              </p>
+                            </div>
+                        ))}
+                        <p className="total">Total: ${total}</p>
+                      </>
+                  )}
+                </div>
+                <OrderForm onSubmit={onSubmit} />
+              </div>
+          )}
+        </div>
+        <small className="rights">© All rights reserved to Little Lemon</small>
+      </>
+  );
+}

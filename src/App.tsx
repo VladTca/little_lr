@@ -7,7 +7,8 @@ import {AppProvider} from './components/context/AppContext';
 import Confirmation from "./components/Booking/Confirmation";
 import Header from "./components/Header/Header";
 import AboutPage from "./components/Home/AboutPage";
-import tableBackground from './assets/images/table.JPG';
+import tableBackground from './assets/images/table.jpg';
+import {JSX} from "react";
 
 function App(): JSX.Element {
   return (

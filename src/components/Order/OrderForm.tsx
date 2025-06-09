@@ -1,10 +1,19 @@
-import { useContext, useState } from "react";
-import { validateEmail, validatePhone } from "../Booking/fieldsValidation";
-import { AppContext } from "../context/AppContext";
+import {useContext, useState} from "react";
+import {validateEmail, validatePhone} from "../Booking/fieldsValidation";
+import {AppContext} from "../context/AppContext";
 
 
-export default function OrderForm({ onSubmit }) {
-  const { cart } = useContext(AppContext);
+interface OrderFormProps {
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+}
+
+export default function OrderForm({ onSubmit }: OrderFormProps) {
+  const context = useContext(AppContext);
+
+  if (!context) throw new Error('AppContext must be within provider');
+
+  const { cart } = context;
+
   const [address, setAddress] = useState('');
   const [name, setName] = useState({ val: '', error: false });
   const [email, setEmail] = useState({ val: '', error: false });
@@ -43,7 +52,7 @@ export default function OrderForm({ onSubmit }) {
           <input
             type='text'
             name="name"
-            maxLength="15"
+            maxLength={15}
             value={name.val}
             onChange={e => setName({...name, val: e.target.value})}
             onBlur={handleNameBlur}
@@ -59,7 +68,7 @@ export default function OrderForm({ onSubmit }) {
             value={phone.val}
             onChange={e => setPhone({...email, val: e.target.value})}
             onBlur={handlePhoneBlur}
-            minLength="11" maxLength="11"
+            minLength={11} maxLength={11}
             required/>
           <label aria-label="phone" htmlFor="phone">Phone Number e.g +0123456789</label>
           {phone.error && 
