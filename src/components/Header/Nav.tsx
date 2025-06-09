@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import './Nav.css';
+import {JSX} from "react";
 
-export default function Nav({ onLinkClick, isMobile = false }) {
+interface NavProps {
+  onLinkClick?: () => void;
+  isMobile?: boolean;
+}
+
+export default function Nav({ onLinkClick, isMobile = false }: NavProps): JSX.Element {
   // Function to handle link clicks, used for mobile navigation to close the menu
-  const handleClick = () => {
+  const handleClick = (): void => {
     if (onLinkClick) {
       onLinkClick();
     }

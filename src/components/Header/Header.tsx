@@ -2,15 +2,14 @@ import '../../assets/shared.css';
 import './header.css';
 import Nav from "./Nav";
 import {exitSvg, hamburgerSvg} from '../../assets/svg';
-import {useState} from "react";
+import {JSX, useState} from "react";
 import {Link} from "react-router-dom";
 import logo from '../../assets/images/logo.png';
 
+export default function Header(): JSX.Element {
+  const [open, setOpen] = useState<boolean>(false);
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
-
-  function toggleHamburger() {
+  function toggleHamburger(): void {
     setOpen(true);
   }
 
@@ -34,7 +33,6 @@ export default function Header() {
         </span>
         <Link to="/" aria-label="Go to Home Page">
           <img src={logo} alt="Little Lemon Logo" />
-
         </Link>
         <span className="nav">
           <Nav />

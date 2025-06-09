@@ -1,4 +1,4 @@
-import {anniversarySvg, birthdaySvg, businessSvg, generalSvg} from "../../assets/svg";
+import {anniversarySvg, birthdaySvg, businessSvg, generalSvg} from "../../assets/svg.tsx";
 import {Link, useLocation} from "react-router-dom";
 
 export default function Confirmation() {
