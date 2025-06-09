@@ -23,7 +23,7 @@ const initialState: AppState = {
     {
       id: 1,
       img: 'cheeseBread.JPG',
-      price: '7.99',
+      price: '3.99',
       dishUpper: 'CHEESE BREAD',
       dishLower: 'Cheese Bread',
       description: 'Our tasty cheesey bread, with chopped tomatoes, bazil leaves and yellow peppers.',
@@ -32,7 +32,7 @@ const initialState: AppState = {
     {
       id: 2,
       img: 'salad.JPG',
-      price: '12.99',
+      price: '10.99',
       dishUpper: 'GREEK SALAD',
       dishLower: 'Greek Salad',
       description: 'Salad with avocado, tomatoes, Bulgarian cheese, green peppers and onions, with our famous sauce.',
@@ -41,7 +41,7 @@ const initialState: AppState = {
     {
       id: 3,
       img: 'pasta.JPG',
-      price: '14.99',
+      price: '18.99',
       dishUpper: 'PASTA MARGARITA',
       dishLower: 'Pasta Margarita',
       description: 'A fresh hand made pasta with high quality tomatoes, bazil leaves and Parmezan cheese.',
@@ -50,7 +50,7 @@ const initialState: AppState = {
     {
       id: 4,
       img: 'fish.JPG',
-      price: '8.99',
+      price: '21.99',
       dishUpper: 'TILAPIA LEMON FISH',
       dishLower: 'Tilapia Lemon fish',
       description: 'Pan grilled tilapia with fresh herbs, olive and lemon, served with pan seared vegetables.',
@@ -59,7 +59,7 @@ const initialState: AppState = {
     {
       id: 5,
       img: 'oysters.JPG',
-      price: '22.99',
+      price: '32.99',
       dishUpper: 'GRILLED OYSTERS',
       dishLower: 'Grilled Oysters',
       description: 'Freshly caught grilled oysters with garlic, brandy and parmesan cheese served with vegetables.',
@@ -68,7 +68,7 @@ const initialState: AppState = {
     {
       id: 6,
       img: 'potatoes.JPG',
-      price: '5.99',
+      price: '4.99',
       dishUpper: 'HOME FRIES',
       dishLower: 'Home Fries',
       description: 'Our traditional sweet & sour potatoes with parmesan cheese, tomatoes and our secret herbs.',

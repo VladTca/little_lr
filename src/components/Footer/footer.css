@@ -7,9 +7,16 @@
   background-color: var(--primary-green);
 }
 
-.footer img {
+.footer > img {
   margin: 20px;
   height: 128px;
+}
+
+.footer li a img {
+  height: 16px;
+  width: 16px;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
 }
 
 .footer section {
@@ -23,17 +30,19 @@
 .footer p {
   font-size: 18px;
   font-weight: 500;
-  color: var(--hg-cream);
-  border-bottom: 1px solid var(--hg-cream);
+  color: var(--primary-yellow);
+  border-bottom: 1px solid var(--hg-black);
 }
 
 .footer li a:hover {
-  border-bottom: 1px solid var(--hg-cream);
+  border-bottom: 1px solid var(--hg-black);
 }
 
 .footer li a {
   color: white;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .footer li {
@@ -43,7 +52,7 @@
 }
 
 .contact {
-  color: var(--primary-yellow);
+  color:white;
 }
 
 @media (max-width: 373px) {

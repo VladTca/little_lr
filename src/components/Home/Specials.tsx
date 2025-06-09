@@ -1,5 +1,3 @@
-import {deliverySvg} from '../../assets/svg';
-import {Link} from "react-router-dom";
 import {useContext} from "react";
 import {AppContext} from '../context/AppContext';
 import cheeseBread from '../../assets/images/cheeseBread.jpg';
@@ -17,24 +15,23 @@ export default function Specials() {
     const { menuData } = context;
 
     const imageMap = {
-        'cheeseBread.JPG': cheeseBread,
-        'salad.JPG': salad,
-        'pasta.JPG': pasta,
         'fish.JPG': fish,
         'oysters.JPG': oysters,
         'potatoes.JPG': potatoes,
+        'cheeseBread.JPG': cheeseBread,
+        'salad.JPG': salad,
+        'pasta.JPG': pasta,
     };
 
     return (
         <>
             <div className='specials-heading'>
-                <p>This Weeks Specials</p>
-                <Link to='/menu' rel='href' aria-label="Go to Online menu page">Online Menu</Link>
+                <p>Dishes of the Day!</p>
             </div>
             <div className='specials-grid'>
                 {
                     menuData.map((special: MenuItem) => {
-                        if ([1, 2, 3].includes(special.id)) {
+
                             return (
                                 <div className='card' key={special.id}>
                                     <img
@@ -47,15 +44,9 @@ export default function Specials() {
                                             <span>${special.price}</span>
                                         </h3>
                                         <p>{special.description}</p>
-                                        <Link to='/order' aria-label="Go to Order page">
-                                            Order a delivery {deliverySvg}
-                                        </Link>
                                     </div>
                                 </div>
                             );
-                        } else {
-                            return null;
-                        }
                     })
                 }
             </div>

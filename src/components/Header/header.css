@@ -1,5 +1,7 @@
 header {
   width: 100%;
+  color: var(--hg-cream);
+  box-sizing: border-box;
 }
 
 .header {
@@ -10,6 +12,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   font-weight: bold;
+  background-color: var(--primary-green);
 }
 
 .fixed {

@@ -2,7 +2,6 @@ import {JSX, useEffect} from 'react';
 import '../../assets/shared.css';
 import './home.css';
 import Article from './Article';
-import Ratings from './Ratings';
 import Specials from './Specials';
 import Footer from '../Footer/Footer';
 
@@ -20,9 +19,6 @@ export default function HomePage(): JSX.Element {
         </section>
         <section id='specials'>
           <Specials />
-        </section>
-        <section id='ratings'>
-          <Ratings />
         </section>
       </main>
       <Footer />
