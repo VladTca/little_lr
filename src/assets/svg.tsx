@@ -1,4 +1,4 @@
-import React from 'react';
+import {JSX} from "react";
 
 const hamburgerSvg: JSX.Element = (
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">

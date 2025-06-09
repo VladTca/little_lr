@@ -1,8 +1,8 @@
-import React from 'react';
 import '../../assets/shared.css';
 import './footer.css';
 import Nav from '../Header/Nav';
-import table from '../../assets/images/table.JPG';
+import table from '../../assets/images/table.jpg';
+import {JSX} from 'react';
 
 export default function Footer(): JSX.Element {
   return (

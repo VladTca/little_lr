@@ -59,7 +59,7 @@ interface AppProviderProps {
   children: ReactNode;
 }
 
-export const AppProvider = ({ children }: AppProviderProps): JSX.Element => {
+export const AppContextProvider = ({ children }: AppProviderProps): JSX.Element => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   return (

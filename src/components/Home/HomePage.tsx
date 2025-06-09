@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import {JSX, useEffect} from 'react';
 import '../../assets/shared.css';
 import './home.css';
 import Article from './Article';

@@ -1,5 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
-import {AppContext} from '../context/AppContext';
+import React, {useEffect, useState} from "react";
 import './order.css';
 import OrderForm from "./OrderForm";
 import useSearch from "./useSearch";
@@ -12,16 +11,13 @@ import fish from '../../assets/images/fish.jpg';
 import oysters from '../../assets/images/oysters.jpg';
 import potatoes from '../../assets/images/potatoes.jpg';
 import {MenuItem} from "../context/initialState.ts";
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { addToCart, removeFromCart } from '../../redux/slices/cartSlice';
 
 
 export default function OrderPage() {
-  const context = useContext(AppContext);
-
-  if (!context) {
-    throw new Error("AppContext must be used within a provider");
-  }
-
-  const { cart, dispatch } = context;
+  const cart = useAppSelector(state => state.cart.cart);
+  const dispatch = useAppDispatch();
 
   const [search, setSearch] = useState('');
   const { handleSearch } = useSearch({ search });
@@ -32,19 +28,11 @@ export default function OrderPage() {
   }, []);
 
   function handleAddToCart(item: MenuItem) {
-    dispatch({
-      type: 'ADD_TO_CART',
-      payload: item,
-    });
+    dispatch(addToCart(item));
   }
 
-
-
   function handleRemoveFromCart(itemId: number) {
-    dispatch({
-      type: 'REMOVE_FROM_CART',
-      payload: itemId,
-    });
+    dispatch(removeFromCart(itemId));
   }
 
 // тип для события submit

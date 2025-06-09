@@ -1,7 +1,6 @@
 import '../../assets/shared.css';
 import './menu.css';
-import {useContext, useEffect} from "react";
-import {AppContext} from '../context/AppContext';
+import {useEffect} from "react";
 import Footer from '../Footer/Footer';
 import cheeseBread from '../../assets/images/cheeseBread.jpg';
 import salad from '../../assets/images/salad.jpg';
@@ -10,16 +9,11 @@ import fish from '../../assets/images/fish.jpg';
 import oysters from '../../assets/images/oysters.jpg';
 import potatoes from '../../assets/images/potatoes.jpg';
 import {MenuItem} from "../context/initialState.ts";
+import { useAppSelector } from '../../redux/hooks';
 
 
 export default function MenuPage() {
-  const context = useContext(AppContext);
-
-  if (!context) {
-    throw new Error("AppContext must be used within a provider");
-  }
-
-  const { menuData } = context;
+  const { menuData } = useAppSelector(state => state.menu);
 
 
   // Map image names to imported images

@@ -1,6 +1,5 @@
-import {useContext} from "react";
-import {AppContext} from "../context/AppContext.tsx";
 import {MenuItem} from "../context/initialState";
+import { useAppSelector } from "../../redux/hooks";
 
 interface SearchProps {
   search: string;
@@ -11,13 +10,7 @@ interface SearchResult {
 }
 
 const useSearch = ({ search }: SearchProps): SearchResult => {
-  const context = useContext(AppContext);
-  
-  if (!context) {
-    throw new Error("useSearch must be used within an AppProvider");
-  }
-  
-  const { menuData } = context;
+  const { menuData } = useAppSelector(state => state.menu);
 
   function handleSearch(): MenuItem[] {
     let filteredItems = menuData.filter(item => {
