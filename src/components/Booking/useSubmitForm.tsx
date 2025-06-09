@@ -19,15 +19,16 @@ const useSubmitForm = () => {
   const [bookingForm, setBookingForm] = useState<FormData | null>(null);
   const navigate = useNavigate();
 
-  function submitForm(
-      e: React.FormEvent<HTMLFormElement>,
+  const submitForm = (
+      e: React.FormEvent<Element>,
       { formData }: { formData: FormData }
-  ): void {
+  ): void => {
     e.preventDefault();
     if (submitAPI(formData)) {
       setBookingForm({ ...formData });
     }
-  }
+  };
+
 
   // Извлекаем значения только если bookingForm существует
   const date = bookingForm?.date ?? '';

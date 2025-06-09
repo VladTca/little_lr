@@ -1,5 +1,5 @@
-import { createContext, useReducer, ReactNode, Dispatch } from "react";
-import initialState, { AppState, MenuItem, CartItem } from "./initialState";
+import {createContext, Dispatch, JSX, ReactNode, useReducer} from "react";
+import initialState, {AppState, CartItem, MenuItem} from "./initialState";
 
 // Define action types
 type AddToCartAction = {

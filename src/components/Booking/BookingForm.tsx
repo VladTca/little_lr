@@ -21,8 +21,9 @@ interface FormData {
 interface BookingFormProps {
     dispatch: React.Dispatch<Action>;
     availableTimes: string[];
-    submitForm: (e: React.FormEvent, data: { formData: FormData }) => void;
+    submitForm: (e: React.FormEvent<Element>, data: { formData: FormData }) => void;
 }
+
 
 export default function BookingForm({
                                         dispatch,

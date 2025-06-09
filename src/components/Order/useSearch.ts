@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
-import { MenuItem } from "../context/initialState";
+import {useContext} from "react";
+import {AppContext} from "../context/AppContext.tsx";
+import {MenuItem} from "../context/initialState";
 
 interface SearchProps {
   search: string;

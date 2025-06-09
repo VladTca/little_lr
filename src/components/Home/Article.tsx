@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import main from '../../assets/images/main.JPG';
+import main from '../../assets/images/main.jpg';
 
 export default function Article() {
   return (

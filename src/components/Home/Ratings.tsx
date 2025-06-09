@@ -25,7 +25,7 @@ export default function Ratings() {
                 <p>{starSvg}{starSvg}{starSvg}{starSvg}{starSvg}</p>
                 <div className='customer'>
                   <a href='https://this-person-does-not-exist.com/en' rel="noreferrer" target="_blank" aria-label='Go to external page'>
-                    <img src={imageMap[rating.img]} alt={rating.name}/>
+                      <img src={imageMap[rating.img as keyof typeof imageMap]} alt={rating.name} />
                   </a>
                   <p>{rating.name}</p>
                 </div>
