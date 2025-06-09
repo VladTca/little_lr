@@ -1,0 +1,50 @@
+/* Navigation styles extracted from header.css */
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav ul li {
+  margin: 0 10px;
+  padding: 10px;
+}
+
+nav a:hover {
+  color: var(--primary-green);
+  border-bottom: 2px solid var(--primary-green);
+}
+
+/* Special styling for the last navigation item (Order Online) */
+nav li:last-child {
+  border: 1px solid var(--primary-yellow);
+  border-radius: var(--border-radius);
+  color: var(--primary-yellow);
+}
+
+/* Mobile navigation styles */
+.hamburger-content nav li {
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.hamburger-content nav li a {
+  padding: 20px;
+  font-weight: 600;
+}
+
+.hamburger-content nav ul li:nth-child(4),
+.hamburger-content nav ul li:nth-child(5) {
+  border: 1px solid var(--primary-yellow);
+  border-radius: var(--border-radius);
+  color: yellow;
+}
+
+/* Media query for mobile navigation */
+@media (max-width: 751px) {
+  .desktop-nav {
+    display: none;
+  }
+}
