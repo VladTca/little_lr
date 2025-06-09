@@ -12,10 +12,12 @@ export default function Confirmation() {
     generalSvg
   );
 
-  function upperCase(word) {
-    const original = [...word];
-    return original[0].toUpperCase() + original.slice(1).join('');
+  function upperCase(word: string): string {
+    if (!word) return '';
+    return word[0].toUpperCase() + word.slice(1);
   }
+
+
 
   return (
     <>
