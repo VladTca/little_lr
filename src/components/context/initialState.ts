@@ -1,4 +1,3 @@
-// Define types for menu items and state
 export interface MenuItem {
   id: number;
   img: string;

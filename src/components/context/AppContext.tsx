@@ -1,7 +1,6 @@
 import {createContext, Dispatch, JSX, ReactNode, useReducer} from "react";
 import initialState, {AppState, CartItem, MenuItem} from "./initialState";
 
-// Define action types
 type AddToCartAction = {
   type: 'ADD_TO_CART';
   payload: MenuItem;
@@ -9,12 +8,11 @@ type AddToCartAction = {
 
 type RemoveFromCartAction = {
   type: 'REMOVE_FROM_CART';
-  payload: number; // item id
+  payload: number;
 };
 
 type AppAction = AddToCartAction | RemoveFromCartAction;
 
-// Define context type
 interface AppContextType {
   cart: CartItem[];
   menuData: MenuItem[];

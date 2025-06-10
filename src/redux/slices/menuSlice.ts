@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
+import type {MenuItem} from '../../components/context/initialState';
 import initialState from '../../components/context/initialState';
-import type { MenuItem } from '../../components/context/initialState';
 
 interface MenuState {
   menuData: MenuItem[];
@@ -14,7 +14,6 @@ export const menuSlice = createSlice({
   name: 'menu',
   initialState: initialMenuState,
   reducers: {
-    // We don't need any reducers for menu data as it's static
   },
 });
 

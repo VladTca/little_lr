@@ -61,7 +61,7 @@ export default function BookingForm({
             validationSchema={BookingFormSchema}
             onSubmit={handleSubmit}
         >
-            {({ values, errors,  isSubmitting }) => {
+            {({ values,   isSubmitting }) => {
                 useEffect(() => {
                     dispatch({
                         type: 'date',

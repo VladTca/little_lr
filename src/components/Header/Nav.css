@@ -26,7 +26,6 @@ nav a:hover {
   padding: 5px;
 }
 
-/* Mobile navigation styles */
 .mobile-nav ul {
   display: flex;
   flex-direction: column;

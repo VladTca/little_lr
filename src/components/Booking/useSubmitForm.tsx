@@ -44,16 +44,15 @@ const useSubmitForm = () => {
           })
       );
 
-      // Add a delay before navigation to ensure the user sees the confirmation message
       const timer = setTimeout(() => {
         navigate("/confirmation", {
           state: { ...bookingForm },
         });
-      }, 1500); // 1.5 seconds delay
+      }, 1500);
 
       return () => clearTimeout(timer); // Clean up the timer
     }
-  }, [bookingForm, date, time, reserveNumber, navigate]); // добавлены зависимости
+  }, [bookingForm, date, time, reserveNumber, navigate]);
 
   return { submitForm };
 };

@@ -1,6 +1,5 @@
 import * as Yup from 'yup';
 
-// Validation schema for the booking form
 const BookingFormSchema = Yup.object().shape({
   firstName: Yup.string()
     .matches(/^[a-zA-Z]{3,15}$/, 'Please enter a valid name (3–15 letters)')

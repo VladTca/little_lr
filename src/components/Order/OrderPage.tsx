@@ -50,7 +50,6 @@ export default function OrderPage() {
     'potatoes.JPG': potatoes,
   };
 
-  // Правильно вычисленный total с приведением цены к числу
   const total = cart
       .reduce((acc, item) => acc + parseFloat(item.price) * item.quantity, 0)
       .toFixed(2);
