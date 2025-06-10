@@ -96,8 +96,9 @@
     border-radius: var(--border-radius);
     border: 1px solid var(--primary-green);
     padding: 10px;
-    background-color: var(--hg-cream);
+    background-color: var(--primary-yellow);
     box-shadow: 0 4px 10px 1px rgb(0 0 0 / 20%);
+    color: var(--primary-green);
 }
 
 .cart-item p {
@@ -120,6 +121,7 @@
     margin-top: 30px;
     font-weight: bold;
     text-align: center;
+    color: var(--primary-green);
 }
 
 form p {
@@ -138,6 +140,7 @@ form p {
 
 .order-details button {
     width: 100%;
+    background-color: var(--primary-yellow);
 }
 
 .submitted {

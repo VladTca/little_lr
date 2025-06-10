@@ -29,7 +29,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
             validationSchema={BookingFormSchema}
             onSubmit={(values, { resetForm }) => {
               console.log('Form submitted:', values);
-              onSubmit({} as any); // или уберите onSubmit, если не нужен в этом виде
+              onSubmit({} as any);
               resetForm();
             }}
         >
@@ -66,8 +66,6 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
                   <label>Delivery Address</label>
                   <ErrorMessage name="address" component="small" />
                 </div>
-
-                {/* Можно добавить другие поля по аналогии — date, time, guests, occasion */}
 
                 <button type="submit" disabled={cart.length === 0}>
                   CHECKOUT

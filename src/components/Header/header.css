@@ -30,7 +30,6 @@ header {
   margin: 10px;
 }
 
-/* Navigation styles moved to Nav.css */
 
 .hamburger-btn {
   display: none;
@@ -50,7 +49,6 @@ header {
   transition: all 0.2s linear;
 }
 
-/* ---------------------> HAMBURGER ---------------------> */
 
 
 .hide-content {
@@ -84,7 +82,6 @@ header {
   color: var(--hg-cream);
 }
 
-/* Mobile navigation styles moved to Nav.css */
 
 .hamburger-content-exit svg {
   position: absolute;
@@ -96,7 +93,6 @@ header {
 }
 
 @media (max-width: 751px) {
-  /* Desktop navigation is hidden via Nav.css */
   .hamburger-btn {
     display: block;
   }
