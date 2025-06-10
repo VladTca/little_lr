@@ -34,7 +34,7 @@ export default function BookingPage() {
   }, []);
 
   return (
-      <>
+      <div className="book">
         <div className="reserve">
           <BookingForm
               submitForm={submitForm}
@@ -44,8 +44,7 @@ export default function BookingPage() {
 
           <img className="map" src={map} alt="Little Lemon location" />
         </div>
-        <small className="rights">© All rights reserved to Little Lemon</small>
-      </>
+      </div>
   );
 }
 

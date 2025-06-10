@@ -57,7 +57,7 @@ export default function OrderForm({ onSubmit }: OrderFormProps) {
 
                 <div className="input-group">
                   <Field type="tel" name="phone" required />
-                  <label>Phone</label>
+                  <label>Phone (must start with +)</label>
                   <ErrorMessage name="phone" component="small" />
                 </div>
 

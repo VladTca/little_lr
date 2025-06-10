@@ -1,13 +1,29 @@
+.book {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
 h2 {
-  border-bottom: 1px solid var(--hg-cream);
+  border-bottom: 1px solid var(--hg-black);
 }
 
 .reserve {
+  position: relative;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 70px auto;
+  justify-content: center;
+  margin: 170px;
+  border: 3px solid var(--primary-yellow, #f4ce14);
+  padding: 20px;
+  border-radius: 10px;
+  /*max-width: 600px;*/
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
 }
 
 .reserve p {
@@ -17,7 +33,7 @@ h2 {
 
 .reserve-date input {
   cursor: pointer;
-  border: 2px solid #d4c114;
+  border: 2px solid var(--secondary-cream);
   width: 240px;
   border-radius: 6px;
   text-align: center;
@@ -25,15 +41,110 @@ h2 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 8px 5px;
   font-weight: 500;
+  color: var(--secondary-cream);
 }
+
+/* ---------- Form Styling ---------- */
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0px auto;
+  margin: 0 auto;
 }
+
+form,
+form label,
+form small,
+form select,
+form option,
+form input,
+form textarea {
+  color: var(--secondary-cream) !important;
+}
+
+/* Universal input/select/textarea styling */
+input,
+select,
+textarea,
+form input,
+form select,
+form textarea {
+  background-color: transparent;
+  border: 1px solid var(--secondary-cream) !important;
+  color: var(--secondary-cream) !important;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder,
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--secondary-cream) !important;
+  opacity: 0.9;
+}
+
+/* Select options dropdown */
+form option {
+  background-color: #333;
+  color: var(--secondary-cream);
+}
+
+/* Date picker fix (calendar icon) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Focus outline */
+input:focus,
+select:focus,
+textarea:focus,
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 2px solid var(--primary-yellow, #f4ce14);
+}
+
+/* Label styling */
+form label {
+  color: black !important;
+  background-color: white;
+  padding: 0 4px;
+  font-size: 12px;
+}
+
+/* Floating label enhancement */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  color: black !important;
+}
+
+/* ---------- Button Styling ---------- */
+form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: var(--primary-yellow, #f4ce14);
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover:not(:disabled) {
+  background-color: #e6c100;
+}
+
+form button:disabled {
+  background-color: #999 !important;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* ---------- Miscellaneous ---------- */
 
 .table-reserved li {
   list-style: none;
@@ -51,12 +162,9 @@ form {
   margin: 20px auto;
 }
 
-.details ul:first-child {
-  color: var(--primary-green);
-}
-
+.details ul:first-child,
 .details ul:nth-child(2) {
-  color: var(--hg-black);
+  color: var(--primary-green);
 }
 
 svg {
@@ -73,6 +181,7 @@ svg {
   max-width: 80%;
 }
 
+/* ---------- Responsive Fix ---------- */
 @media (min-width: 720px) and (max-height: 420px) {
   .reserve {
     height: auto;

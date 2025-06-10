@@ -6,7 +6,7 @@ import MenuPage from "./components/Menu/MenuPage";
 import Confirmation from "./components/Booking/Confirmation";
 import Header from "./components/Header/Header";
 import AboutPage from "./components/Home/AboutPage";
-import tableBackground from './assets/images/table.jpg';
+import tableBackground from './assets/images/greek-salad.webp';
 import {JSX} from "react";
 import {AppContextProvider} from './components/context/AppContext';
 

@@ -51,7 +51,7 @@ body {
 
 .bg {
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -68,7 +68,7 @@ a[rel="href"],
 button {
   padding: 10px;
   cursor: pointer;
-  font-family: var(--family-p-a);
+  font-family: var(--family-p-a), serif;
   color: var(--hg-black);
   font-weight: 600;
   font-size: 16px;
@@ -101,7 +101,7 @@ button:disabled {
 a {
   color: inherit;
   text-decoration: none;
-  font-family: var(--family-p-a);
+  font-family: var(--family-p-a), serif;
 }
 
 li {

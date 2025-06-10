@@ -26,7 +26,7 @@ const initialState: AppState = {
       price: '3.99',
       dishUpper: 'CHEESE BREAD',
       dishLower: 'Cheese Bread',
-      description: 'Our tasty cheesey bread, with chopped tomatoes, bazil leaves and yellow peppers.',
+      description: 'Crispy, cheesy bread with tomatoes, yellow peppers, and fresh basil — simple, sunny, and delicious.',
       quantity: 0,
     },
     {
@@ -35,7 +35,7 @@ const initialState: AppState = {
       price: '10.99',
       dishUpper: 'GREEK SALAD',
       dishLower: 'Greek Salad',
-      description: 'Salad with avocado, tomatoes, Bulgarian cheese, green peppers and onions, with our famous sauce.',
+      description: 'risp cucumbers, juicy tomatoes, Kalamata olives, and feta — tossed in a zesty lemon-oregano dressing.',
       quantity: 0,
     },
     {
@@ -44,7 +44,7 @@ const initialState: AppState = {
       price: '18.99',
       dishUpper: 'PASTA MARGARITA',
       dishLower: 'Pasta Margarita',
-      description: 'A fresh hand made pasta with high quality tomatoes, bazil leaves and Parmezan cheese.',
+      description: 'Al dente pasta in a light tomato-basil sauce,fresh mozzarella and a touch of olive oil.',
       quantity: 0,
     },
     {
@@ -53,7 +53,7 @@ const initialState: AppState = {
       price: '21.99',
       dishUpper: 'TILAPIA LEMON FISH',
       dishLower: 'Tilapia Lemon fish',
-      description: 'Pan grilled tilapia with fresh herbs, olive and lemon, served with pan seared vegetables.',
+      description: 'Tender tilapia fillet pan-seared with lemon, herbs, and a hint of garlic — light, zesty, and full of flavor.',
       quantity: 0,
     },
     {
@@ -62,7 +62,7 @@ const initialState: AppState = {
       price: '32.99',
       dishUpper: 'GRILLED OYSTERS',
       dishLower: 'Grilled Oysters',
-      description: 'Freshly caught grilled oysters with garlic, brandy and parmesan cheese served with vegetables.',
+      description: 'Char-grilled oysters with herbs, garlic butter, and a splash of lemon — smoky, rich, and irresistible.',
       quantity: 0,
     },
     {
@@ -71,7 +71,7 @@ const initialState: AppState = {
       price: '4.99',
       dishUpper: 'HOME FRIES',
       dishLower: 'Home Fries',
-      description: 'Our traditional sweet & sour potatoes with parmesan cheese, tomatoes and our secret herbs.',
+      description: 'Crispy golden potatoes, pan-fried with herbs and a hint of spice — comfort food done right.',
       quantity: 0,
     },
   ],

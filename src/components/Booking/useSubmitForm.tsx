@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {submitAPI} from "./bookingAPI";
 
-// Типизация данных формы
 interface FormData {
   firstName: string;
   lastName: string;
@@ -30,7 +29,6 @@ const useSubmitForm = () => {
   };
 
 
-  // Извлекаем значения только если bookingForm существует
   const date = bookingForm?.date ?? '';
   const time = bookingForm?.time ?? '';
   const reserveNumber = bookingForm?.reserveNumber ?? 0;
@@ -45,9 +43,15 @@ const useSubmitForm = () => {
             reservation: reserveNumber,
           })
       );
-      navigate("/confirmation", {
-        state: { ...bookingForm },
-      });
+
+      // Add a delay before navigation to ensure the user sees the confirmation message
+      const timer = setTimeout(() => {
+        navigate("/confirmation", {
+          state: { ...bookingForm },
+        });
+      }, 1500); // 1.5 seconds delay
+
+      return () => clearTimeout(timer); // Clean up the timer
     }
   }, [bookingForm, date, time, reserveNumber, navigate]); // добавлены зависимости
 

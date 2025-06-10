@@ -11,8 +11,8 @@ import fish from '../../assets/images/fish.jpg';
 import oysters from '../../assets/images/oysters.jpg';
 import potatoes from '../../assets/images/potatoes.jpg';
 import {MenuItem} from "../context/initialState.ts";
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { addToCart, removeFromCart } from '../../redux/slices/cartSlice';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {addToCart, removeFromCart} from '../../redux/slices/cartSlice';
 
 
 export default function OrderPage() {
@@ -56,7 +56,7 @@ export default function OrderPage() {
       .toFixed(2);
 
   return (
-      <>
+      <div className="order-page">
         <div className="order">
           <h2>ORDER ONLINE</h2>
           {submitted ? (
@@ -108,6 +108,6 @@ export default function OrderPage() {
           )}
         </div>
         <small className="rights">© All rights reserved to Little Lemon</small>
-      </>
+      </div>
   );
 }

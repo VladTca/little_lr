@@ -9,7 +9,6 @@ const seededRandom = function (seed: number): () => number {
   };
 };
 
-// Симуляция API для получения доступных времён
 const fetchAPI = function (date: Date): string[] {
   const result: string[] = [];
   const random = seededRandom(date.getDate());
@@ -26,7 +25,6 @@ const fetchAPI = function (date: Date): string[] {
   return result;
 };
 
-// Тип формы можно уточнить при необходимости
 interface FormData {
   firstName: string;
   lastName: string;
@@ -39,7 +37,6 @@ interface FormData {
   reserveNumber: number;
 }
 
-// Симуляция отправки данных формы
 const submitAPI = function (formData: FormData): boolean {
   console.log(formData);
   return true;

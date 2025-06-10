@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import { Action } from './types.ts';
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
-import { BookingFormSchema } from "./fieldsValidation";
+import React, {useEffect, useState} from "react";
+import {Action} from './types.ts';
+import {ErrorMessage, Field, Form, Formik, FormikHelpers} from 'formik';
+import {BookingFormSchema} from "./fieldsValidation";
 
-// Тип данных формы
 interface FormData {
     firstName: string;
     lastName: string;
@@ -16,7 +15,6 @@ interface FormData {
     reserveNumber: number;
 }
 
-// Тип пропсов компонента
 interface BookingFormProps {
     dispatch: React.Dispatch<Action>;
     availableTimes: string[];
@@ -29,6 +27,7 @@ export default function BookingForm({
     submitForm,
 }: BookingFormProps) {
     const today = new Date().toISOString().slice(0, 10);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const initialValues: Omit<FormData, 'reserveNumber'> = {
         firstName: '',
@@ -52,6 +51,7 @@ export default function BookingForm({
 
         const syntheticEvent = { preventDefault: () => {} } as React.FormEvent;
         submitForm(syntheticEvent, { formData });
+        setIsSubmitted(true);
         setSubmitting(false);
     };
 
@@ -61,8 +61,7 @@ export default function BookingForm({
             validationSchema={BookingFormSchema}
             onSubmit={handleSubmit}
         >
-            {({ values, errors, touched, isSubmitting, setFieldValue }) => {
-                // Update available times when date changes
+            {({ values, errors,  isSubmitting }) => {
                 useEffect(() => {
                     dispatch({
                         type: 'date',
@@ -149,7 +148,7 @@ export default function BookingForm({
                                 minLength={11}
                                 maxLength={11}
                             />
-                            <label htmlFor="phone">Phone Number e.g +0123456789</label>
+                            <label htmlFor="phone">Phone Number (must start with +) e.g +1234567890</label>
                             <ErrorMessage name="phone" component="small" />
                         </div>
 
@@ -164,10 +163,23 @@ export default function BookingForm({
                             <option value="Business">Business</option>
                         </Field>
 
+                        {isSubmitted && (
+                            <div style={{ 
+                                color: 'green', 
+                                margin: '10px 0', 
+                                padding: '10px', 
+                                backgroundColor: 'rgba(0, 255, 0, 0.1)', 
+                                borderRadius: '5px',
+                                textAlign: 'center'
+                            }}>
+                                Your booking request has been accepted! Redirecting to confirmation page...
+                            </div>
+                        )}
+
                         <button 
                             aria-label="On Click confirm booking details" 
                             type="submit" 
-                            disabled={isSubmitting || Object.keys(errors).length > 0}
+                            disabled={isSubmitting}
                         >
                             Confirm booking
                         </button>

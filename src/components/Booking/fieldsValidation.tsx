@@ -12,7 +12,7 @@ const BookingFormSchema = Yup.object().shape({
     .email('Please enter a valid email address')
     .required('Email is required'),
   phone: Yup.string()
-    .matches(/^[0+]?[0-9]{10}$/, 'Phone number should start with + or 0 and have 10 digits')
+    .matches(/^\+[0-9]{10}$/, 'Phone number must start with + followed by 10 digits')
     .required('Phone number is required'),
   date: Yup.string()
     .required('Date is required'),

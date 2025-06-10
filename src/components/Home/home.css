@@ -258,19 +258,67 @@ h3 {
 
 .about h3 {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
   font-size: var(--h3-sbhd);
   font-family: var(--family-h2-h3), serif;
   padding: 0;
 }
 
 .about p {
-  padding: 40px;
+  padding:40px;
   max-width: 780px;
   margin: auto;
   word-spacing: 4px;
   font-family: var(--family-p-a), serif;
+  text-align: justify;
+  text-justify: inter-word;
+  text-indent: 20px;
+  letter-spacing: 1px;
 }
+.about-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.avatar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  text-align: center;
+  font-family: var(--family-p-a), serif;
+  color: var(--secondary-cream);
+}
+
+.avatar-card img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.avatar-text {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.avatar-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.avatar-text em {
+  font-size: 11px;
+  font-style: italic;
+  color: #f4f4c9;
+}
+
 
 @media (max-width: 1024px) {
   .header-main-content h2 {

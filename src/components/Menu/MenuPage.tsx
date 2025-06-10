@@ -9,14 +9,14 @@ import fish from '../../assets/images/fish.jpg';
 import oysters from '../../assets/images/oysters.jpg';
 import potatoes from '../../assets/images/potatoes.jpg';
 import {MenuItem} from "../context/initialState.ts";
-import { useAppSelector } from '../../redux/hooks';
+import {useAppSelector} from '../../redux/hooks';
 
 
 export default function MenuPage() {
   const { menuData } = useAppSelector(state => state.menu);
 
 
-  // Map image names to imported images
+
   const imageMap: { [key: string]: string } = {
     'cheeseBread.JPG': cheeseBread,
     'salad.JPG': salad,
