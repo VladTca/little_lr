@@ -10,7 +10,7 @@ export default function Header(): JSX.Element {
   const [open, setOpen] = useState<boolean>(false);
 
   function toggleHamburger(): void {
-    setOpen(true);
+    setOpen(!open);
   }
 
   return (

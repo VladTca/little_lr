@@ -38,7 +38,7 @@ export default function Footer(): JSX.Element {
         <section className='contact'>
           <p>Contact</p>
           <ul>
-            <li>348 Lemon Grove Ln, Lemont Heights, IL 60439 ,Chicago</li>
+            <li>348 Lemon Grove Ln, IL 60439 ,Chicago</li>
             <li>+1 (773) 555-1919</li>
             <li>lhello@littlelemon-il.fake</li>
           </ul>

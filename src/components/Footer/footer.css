@@ -58,5 +58,6 @@
 @media (max-width: 373px) {
   .footer {
     justify-content: space-between;
+    color: white;
   }
 }

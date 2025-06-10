@@ -26,6 +26,33 @@ nav a:hover {
   padding: 5px;
 }
 
+/* Mobile navigation styles */
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-nav ul li {
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.mobile-nav a {
+  color: var(--primary-yellow);
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.mobile-nav a:hover {
+  color: var(--primary-green);
+  background: var(--primary-yellow);
+  border-bottom: none;
+  border-radius: 5px;
+}
+
 .hamburger-content nav li {
   margin: 10px;
   padding: 20px;
@@ -35,6 +62,7 @@ nav a:hover {
 .hamburger-content nav li a {
   padding: 20px;
   font-weight: 600;
+  color: var(--primary-yellow);
 }
 
 @media (max-width: 751px) {
