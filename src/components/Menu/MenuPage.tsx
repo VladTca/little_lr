@@ -1,4 +1,4 @@
-import '../../assets/shared.css';
+import '../../assets/globalstyles.css';
 import './menu.css';
 import {useEffect} from "react";
 import Footer from '../Footer/Footer';

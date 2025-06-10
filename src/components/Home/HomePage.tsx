@@ -1,5 +1,5 @@
 import {JSX, useEffect} from 'react';
-import '../../assets/shared.css';
+import '../../assets/globalstyles.css';
 import './home.css';
 import Article from './Article';
 import Specials from './Specials';

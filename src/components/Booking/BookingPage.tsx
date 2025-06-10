@@ -1,7 +1,7 @@
 import {useEffect, useReducer} from "react";
 import BookingForm from "./BookingForm";
 import {fetchAPI} from "./bookingAPI";
-import '../../assets/shared.css';
+import '../../assets/globalstyles.css';
 import './book.css';
 import useSubmitForm from "./useSubmitForm";
 import map from '../../assets/images/map.jpg';

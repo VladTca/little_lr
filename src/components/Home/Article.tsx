@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import entrance from '../../assets/images/LLR-EntranceLeft.png';
 import './home.css';
-import '../../assets/shared.css';
+import '../../assets/globalstyles.css';
 
 
 export default function Article() {

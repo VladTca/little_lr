@@ -1,4 +1,4 @@
-import '../../assets/shared.css';
+import '../../assets/globalstyles.css';
 import './header.css';
 import Nav from "./Nav";
 import {exitSvg, hamburgerSvg} from '../../assets/svg';

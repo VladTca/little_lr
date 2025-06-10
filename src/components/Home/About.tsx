@@ -4,7 +4,7 @@ import avatar3 from '../../assets/images/avatar_4.png';
 import avatar4 from '../../assets/images/avatar_3.png';
 import avatar5 from '../../assets/images/avatar_6.png';
 import './home.css';
-import '../../assets/shared.css';
+import '../../assets/globalstyles.css';
 
 const team = [
     {

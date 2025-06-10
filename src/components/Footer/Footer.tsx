@@ -1,4 +1,4 @@
-import '../../assets/shared.css';
+import '../../assets/globalstyles.css';
 import './footer.css';
 import Nav from '../Header/Nav';
 import lemon from '../../assets/images/footer2.jpg';
